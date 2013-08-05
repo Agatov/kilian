@@ -2,6 +2,8 @@ $ ->
 
   $('#order-button').bind 'click', ->
 
+    yaCounter21993184.reachGoal('new_order')
+
     $('.modal-overlay').bind 'click', ->
       hide_thank_you()
 
