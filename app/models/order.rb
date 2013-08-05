@@ -4,23 +4,23 @@ class Order < ActiveRecord::Base
   after_create :send_notification
 
   def send_notification
-    response = HTTParty.get(
-        'http://api.sms24x7.ru',
-        query: {
-            method: 'push_msg',
-            email: 'agatovs@gmail.com',
-            password: 'avv6rqE',
-            phone: '79037928959',
-            text: sms_text,
-            sender_name: 'montale'
-        }
-    )
+    phones = %w(79037928959 79057376916)
 
-    if response.parsed_response['response']['msg']['text'] == 'OK'
-      true
-    else
-      false
+    phones.each do |phone|
+      HTTParty.get(
+          'http://api.sms24x7.ru',
+          query: {
+              method: 'push_msg',
+              email: 'agatovs@gmail.com',
+              password: 'avv6rqE',
+              phone: phone.to_s,
+              text: sms_text,
+              sender_name: 'kilian'
+          }
+      )
     end
+
+    true
   end
 
   def sms_text
