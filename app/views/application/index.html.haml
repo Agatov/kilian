@@ -1,0 +1,36 @@
+#intro
+  .wrapper
+    .desc
+      Продажа парфюмерии
+      Kilian
+      в Москве
+
+    .about
+      От официального дилера по специальным ценам только до конца месяца.
+
+    .form-container
+      .top-form
+        %input{type: :text, name: 'username', placeholder: 'Введите ваше имя'}
+        %input{type: :text, name: 'phone', placeholder: 'Введите ваш номер телефона'}
+        .button#order-button
+          Заказать каталог
+
+      .form-text
+        Оставьте заявку до
+        %br
+        %span.red 9 августа
+        и получите каталог со скидкой
+        %br
+        %span.red 21%
+
+
+.modal-overlay
+.modal-thank-you
+  .header
+    Спасибо!
+  .body
+    Мы свяжемся с вами уже очень скоро.
+
+
+    %button#hide-thank-you
+      Я буду ждать!
